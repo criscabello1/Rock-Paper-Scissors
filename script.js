@@ -13,14 +13,12 @@ function getComputerChoice(){
 // and depending of the value of this variable the function will return the valid choices.
 
 function getHumanChoice(){
-  const humanChoice = +prompt('Enter a number for your choice: (1 = "rock", 2 = "paper", 3 = "scissors")')
-	if (humanChoice == 1) return 'rock'
-	else if (humanChoice == 2) return 'paper'
-	else if (humanChoice == 3) return 'scissors' 
+  const humanChoice = prompt('Enter an option: ("rock","paper","scissors")')
+	return humanChoice 
 
 }
 
-// MY game will play 5 rounds. I will write a function named playGame that calls playRound to play 5 rounds, keeps track of the scores and declares a winner at the end.
+// My game will play 5 rounds. I will write a function named playGame that calls playRound to play 5 rounds, keeps track of the scores and declares a winner at the end.
 
 function playGame(){
 	// For keeping track of the scores i will have 2 variables that will change
