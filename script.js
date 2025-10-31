@@ -1,7 +1,3 @@
-// For keeping track of the scores i will have 2 variables that will change
-let humanScore = 0
-let computerScore = 0
-
 // I have to create a function getComputerChoice wich generate a random
 // value and since this value, returns "rock", "paper" or "scissors"
 
@@ -24,22 +20,33 @@ function getHumanChoice(){
 
 }
 
-// I will write a function that takes the human and computer player choices as arguments, plays a single round, increments the round winner’s score and logs a winner announcement.
-function playRound(humanChoice, computerChoice){
-	console.log(`Computer choices ${computerChoice}`)
-	if (humanChoice == computerChoice) console.log('Draw')
-	else if (humanChoice == 'rock' && computerChoice == 'scissors' || humanChoice == 'paper' && computerChoice == 'rock' || humanChoice == 'scissors' && computerChoice == 'paper') {
-    humanScore++
+// MY game will play 5 rounds. I will write a function named playGame that calls playRound to play 5 rounds, keeps track of the scores and declares a winner at the end.
+
+function playGame(){
+	// For keeping track of the scores i will have 2 variables that will change
+	let humanScore = 0
+	let computerScore = 0
+	// I will write a function that takes the human and computer player choices as arguments, plays a single round, increments the round winner’s score and logs a winner announcement.
+	function playRound(){
+		humanSelection = getHumanChoice();
+		computerSelection = getComputerChoice();
+		console.log(`Computer choices ${computerSelection}`)
+		if (humanSelection == computerSelection) console.log('Draw')
+			else if (humanSelection == 'rock' && computerSelection == 'scissors' || humanSelection == 'paper' && computerSelection == 'rock' || humanSelection == 'scissors' && computerSelection == 'paper') {
+		humanScore++
 		console.log('You win!')
-  }
+	}
 	else{
 		computerScore++
 		console.log('Computer wins!')
 	}
+	console.log(`Computer : ${computerScore} You: ${humanScore}` )
+}
+playRound();
+playRound();
+playRound();
+playRound();
+playRound();
 }
 
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
-
-playRound(humanSelection, computerSelection);
-console.log(`Computer : ${computerScore} You: ${humanScore}` )
+playGame()
